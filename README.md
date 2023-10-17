@@ -3,6 +3,12 @@
   Generate "signature" and "token" for [Tiktok Shop](https://partner.tiktokshop.com/doc).
 
   [![NPM Version][npm-version-image]][npm-url]
+  
+  I am very happy and grateful for everyone's help. These meaningful contributions will greatly help me in expanding the useful library to help people.
+
+  <a href="https://www.buymeacoffee.com/tudinhacoustic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+  Paypal: https://paypal.me/tudinhacoustic
 
 ## Content
 1. [Installation](#installation)
@@ -122,5 +128,4 @@ Follow me on:
 [Youtube](https://www.youtube.com/c/TuDinh) |
 [Facebook](https://www.facebook.com/TuThichLapTrinh)
 
-Buy Me a Coffee: https://paypal.me/tudinhacoustic
   
