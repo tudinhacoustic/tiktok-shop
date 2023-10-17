@@ -1,0 +1,22 @@
+{
+  "name": "tiktok-shop",
+  "version": "1.0.0",
+  "description": "More detail: https://partner.tiktokshop.com/doc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tudinhacoustic/tiktok-shop.git"
+  },
+  "author": "Tu Dinh Acoustic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tudinhacoustic/tiktok-shop/issues"
+  },
+  "homepage": "https://github.com/tudinhacoustic/tiktok-shop#readme",
+  "dependencies": {
+    "axios": "^1.5.1"
+  }
+}
