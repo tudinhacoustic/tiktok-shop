@@ -10,24 +10,24 @@ module.exports = class Common {
 		hmac.update(plainText);
 		return hmac.digest('hex');
 	}
-    static signature(config = {}, url = '') {
+    static signature(config = {}, path = '') {
         let input = '';
         const getKeyValue = this.getKeyValue(config);
         const timestamp = this.timestamp();
         let formatUrl = '';
-        if (url.includes('?')) {
-            formatUrl = `${url}&${getKeyValue}&timestamp=${timestamp}&version=${constants.version}`;
+        if (path.includes('?')) {
+            formatUrl = `${path}&${getKeyValue}&timestamp=${timestamp}&version=${config.version ? config.version : constants.version}`;
         } else {
-            formatUrl = `${url}?${getKeyValue}&timestamp=${timestamp}&version=${constants.version}`;
+            formatUrl = `${path}?${getKeyValue}&timestamp=${timestamp}&version=${config.version ? config.version : constants.version}`;
         }
         const getBaseUrl = this.getBaseUrl(formatUrl);
         const stringToObject = this.stringToObject(getBaseUrl.query);
         const key = this.sortKeyObject(stringToObject);
-        const path = this.getPath(formatUrl);
+        const tiktokPathHash = this.getPath(formatUrl);
         for (let index = 0; index < key.length; index += 1) {
             input+=key[index]+stringToObject[key[index]];
         }
-        const plainText = config.app_secret+'/'+path+input+config.app_secret;
+        const plainText = config.app_secret+tiktokPathHash+input+config.app_secret;
         const signature = this.sha256Decoded(plainText, config.app_secret);
         return {
             signature,
@@ -44,7 +44,7 @@ module.exports = class Common {
     static getPath(url = '') {
         const indexOfDotCom = url.indexOf(".com");
         const indexOfQuestionMark = url.indexOf("?", indexOfDotCom);
-        return url.substring(indexOfDotCom + 5, indexOfQuestionMark);
+        return url.substring(indexOfDotCom, indexOfQuestionMark);
     }
     static sortKeyObject(pathObj = {}) {
         const declareKeyObj = ["app_secret", "token"]     
@@ -79,8 +79,8 @@ module.exports = class Common {
     }
     static checkConfig(config) {
         let error = '';
-        if (!(config.app_key && config.app_secret && config.token)) {
-            const compareArray = ['app_key', 'app_secret', 'token'];
+        if (!(config.app_key && config.app_secret)) {
+            const compareArray = ['app_key', 'app_secret'];
             const keysArray = Object.keys(config);
             const missing = compareArray.filter(item => !keysArray.includes(item));
             error = `config must have ${missing.toString()}`;

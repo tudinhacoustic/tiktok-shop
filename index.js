@@ -1,15 +1,15 @@
 const axios = require('axios');
 const Common = require('./common/common');
 const Authorized = require('./services/authorized');
-function signature(config, url) {
+function signature(config, path) {
     const error = Common.checkConfig(config);
     if (error) {
         return new Error(error);
     }
-    if (!url) {
-        return new Error('url is required');
+    if (!path) {
+        return new Error('path is required');
     }
-    return Common.signature(config, url);
+    return Common.signature(config, path);
 }
 async function authCodeToken(config, authCode) {
     const error = Common.checkConfig(config);
