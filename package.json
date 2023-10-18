@@ -1,6 +1,6 @@
 {
   "name": "tiktok-shop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "More detail: https://partner.tiktokshop.com/doc",
   "main": "index.js",
   "scripts": {

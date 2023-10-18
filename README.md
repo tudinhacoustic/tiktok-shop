@@ -34,23 +34,31 @@ $ npm install tiktok-shop
   * Generate Token using Refresh Token
 
 [Back](#content)
+
+## Docs & Community
+
+  * [Discord](https://discord.com/channels/1164023414315548786/1164023415288631379) for support and discussion
+  * [Github](https://gitter.im/expressjs/express) for have issues
+
 ## Generate Signature
 ```js
 const tiktokShop = require('tiktok-shop')
 
+// Extract all query param EXCEPT ' sign ', ' access_token ', You do not need to reorder the params based on alphabetical order.
 const config = {
     app_key: 'yourAppKey', // Required
     app_secret: 'yourAppSecret',  // Required
     shop_id: 'yourShopId', // Optional
     shop_cipher: 'yourShopCipher', // Optional
+    version: '202306', // Default: 202212
 }
 
 // Tiktok API name, more detail: https://partner.tiktokshop.com/dev/api-testing-tool
-const url = '/api/orders/search';
-const signature = tiktokShop.signature(config, url);
+const path = '/api/orders/search';
+const signature = tiktokShop.signature(config, path);
 console.info(signature);
 ```
-Data Reponse
+Response Data
 ```console
 {
   signature: '96f15922fbacd220cea0d8370ba7dff2273674f2a2856868b7e32f7d98da0efe',
@@ -62,11 +70,10 @@ Data Reponse
 ```js
 const tiktokShop = require('tiktok-shop')
 
+// Extract all query param EXCEPT ' sign ', ' access_token ', You do not need to reorder the params based on alphabetical order.
 const config = {
     app_key: 'yourAppKey', // Required
     app_secret: 'yourAppSecret',  // Required
-    shop_id: 'yourShopId', // Optional
-    shop_cipher: 'yourShopCipher', // Optional
 }
 
 // How to get Auth Code: https://partner.tiktokshop.com/doc/page/63fd743c715d622a338c4e5a
@@ -74,7 +81,7 @@ const authCode = 'yourAuthCode';
 const accessToken = tiktokShop.authCodeToken(config, authCode);
 console.info(accessToken);
 ```
-Data Reponse
+Response Data
 ```console
 {
     "access_token": "ROW_-3_uKAAAAADYdCab***",
@@ -92,11 +99,10 @@ Data Reponse
 ```js
 const tiktokShop = require('tiktok-shop')
 
+// Extract all query param EXCEPT ' sign ', ' access_token ', You do not need to reorder the params based on alphabetical order.
 const config = {
     app_key: 'yourAppKey', // Required
     app_secret: 'yourAppSecret',  // Required
-    shop_id: 'yourShopId', // Optional
-    shop_cipher: 'yourShopCipher', // Optional
 }
 
 // How to get Auth Code: https://partner.tiktokshop.com/doc/page/63fd743c715d622a338c4e5a
@@ -104,7 +110,7 @@ const refreshToken = 'yourRefreshToken';
 const accessToken = tiktokShop.authCodeToken(config, refreshToken);
 console.info(accessToken);
 ```
-Data Reponse
+Response Data
 ```console
 {
     "access_token": "ROW_-3_uKAAAAADYdCab***",
