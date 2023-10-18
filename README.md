@@ -38,7 +38,7 @@ $ npm install tiktok-shop
 ## Docs & Community
 
   * [Discord](https://discord.com/channels/1164023414315548786/1164023415288631379) for support and discussion
-  * [Github](https://gitter.im/expressjs/express) for have issues
+  * [Github](https://github.com/tudinhacoustic/tiktok-shop/issues) for have issues
 
 ## Generate Signature
 ```js
