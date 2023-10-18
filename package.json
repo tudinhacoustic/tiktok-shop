@@ -1,7 +1,7 @@
 {
   "name": "tiktok-shop",
-  "version": "1.0.1",
-  "description": "More detail: https://partner.tiktokshop.com/doc",
+  "version": "1.0.2",
+  "description": "Generate 'signature' and 'token' for Tiktok Shop.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
