@@ -13,9 +13,10 @@
 ## Content
 1. [Installation](#installation)
 2. [Features](#features)
-2. [Generate Signature](#generate-signature)
-2. [Generate Token using Auth Code](#generate-token-using-auth-code)
-2. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
+3. [Community](#community)
+4. [Generate Signature](#generate-signature)
+5. [Generate Token using Auth Code](#generate-token-using-auth-code)
+6. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
 
 ## Installation
 
@@ -35,7 +36,7 @@ $ npm install tiktok-shop
 
 [Back](#content)
 
-## Docs & Community
+## Community
 
   * [Discord](https://discord.com/channels/1164023414315548786/1164023415288631379) for support and discussion
   * [Github](https://github.com/tudinhacoustic/tiktok-shop/issues) for have issues
@@ -126,8 +127,8 @@ Response Data
 [Back](#content)
 
 
-[npm-url]: https://npmjs.org/package/express
-[npm-version-image]: https://badgen.net/npm/v/express
+[npm-url]: https://npmjs.org/package/tiktok-shop
+[npm-version-image]: https://badgen.net/npm/v/tiktok-shop
 
 Follow me on: 
 [Linkedin](https://www.linkedin.com/in/tudinhacoustic) |
