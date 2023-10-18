@@ -20,5 +20,9 @@
     "axios": "^1.5.1"
   },
   "devDependencies": {},
-  "keywords": []
+  "keywords": [
+    "tiktok-shop",
+    "tiktok",
+    "tiktok shop api"
+  ]
 }
