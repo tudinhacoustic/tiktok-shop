@@ -14,9 +14,10 @@
 1. [Installation](#installation)
 2. [Features](#features)
 3. [Community](#community)
-4. [Generate Signature](#generate-signature)
-5. [Generate Token using Auth Code](#generate-token-using-auth-code)
-6. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
+4. [Generate Signature using Url](#generate-signature-using-url)
+5. [Generate Signature](#generate-signature)
+6. [Generate Token using Auth Code](#generate-token-using-auth-code)
+7. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
 
 ## Installation
 
@@ -41,6 +42,28 @@ $ npm install tiktok-shop
   * [Discord](https://discord.com/channels/1164023414315548786/1164023415288631379) for support and discussion
   * [Github](https://github.com/tudinhacoustic/tiktok-shop/issues) for have issues
 
+[Back](#content)
+
+## Generate Signature using Url
+```js
+const tiktokShop = require('tiktok-shop')
+
+// Example Url.
+// The package helps reorder the parameters and remove keys as Tiktok Shop's instructions.
+const url = 'https://open-api.tiktokglobalshop.com/order/202309/orders?access_token=ROW_CBxxx&app_key=6a6xxx&ids=5779xxx&shop_cipher=ROW_Y-vWxxx&shop_id=&timestamp=1697708762&version=202309';
+
+const appSecret = '4ebxxx';
+
+const signature = tiktokShop.signByUrl(url, appSecret);
+console.info(signature);
+```
+Response Data
+```console
+{
+  signature: '96f15922fbacd220cea0d8370ba7dff2273674f2a2856868b7e32f7d98da0efe',
+  timestamp: 1697540200
+}
+```
 [Back](#content)
 
 ## Generate Signature

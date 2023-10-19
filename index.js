@@ -57,8 +57,16 @@ async function generateToken(config, refreshToken) {
     if (errorResponse) { return new Error(errorResponse) };
     return result;
 }
+function signByUrl(url = '', appSecret = '') {
+    const error = Common.checkUrl(url, appSecret);
+    if (error) {
+        return new Error(error);
+    }
+    return Common.signByUrl(url, appSecret);
+}
 module.exports = {
     signature,
     authCodeToken,
     generateToken,
+    signByUrl,
 }
