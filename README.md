@@ -15,7 +15,7 @@
 2. [Features](#features)
 3. [Community](#community)
 4. [Generate Signature using Url](#generate-signature-using-url)
-5. [Generate Signature](#generate-signature)
+5. [Generate Signature using Config](#generate-signature-using-config)
 6. [Generate Token using Auth Code](#generate-token-using-auth-code)
 7. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
 
@@ -66,7 +66,7 @@ Response Data
 ```
 [Back](#content)
 
-## Generate Signature
+## Generate Signature using Config
 ```js
 const tiktokShop = require('tiktok-shop')
 
