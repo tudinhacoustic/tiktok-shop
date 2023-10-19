@@ -13,7 +13,10 @@ module.exports = class Common {
     static signature(config = {}, path = '') {
         let input = '';
         const getKeyValue = this.getKeyValue(config);
-        const timestamp = this.timestamp();
+        let timestamp = this.timestamp();
+        if (config.timestamp) {
+            timestamp = config.timestamp;
+        }
         let formatUrl = '';
         if (path.includes('?')) {
             formatUrl = `${path}&${getKeyValue}&timestamp=${timestamp}&version=${config.version ? config.version : constants.version}`;
@@ -27,7 +30,7 @@ module.exports = class Common {
         for (let index = 0; index < key.length; index += 1) {
             input+=key[index]+stringToObject[key[index]];
         }
-        const plainText = config.app_secret+tiktokPathHash+input+config.app_secret;
+        const plainText = config.app_secret+tiktokPathHash+decodeURIComponent(input)+config.app_secret;
         const signature = this.sha256Decoded(plainText, config.app_secret);
         return {
             signature,
