@@ -10,7 +10,7 @@ module.exports = class Common {
 		hmac.update(plainText);
 		return hmac.digest('hex');
 	}
-    static signature(config = {}, path = '') {
+    static signature(config = {}, path = '', body={}) {
         let input = '';
         const getKeyValue = this.getKeyValue(config);
         let timestamp = this.timestamp();
@@ -30,7 +30,7 @@ module.exports = class Common {
         for (let index = 0; index < key.length; index += 1) {
             input+=key[index]+stringToObject[key[index]];
         }
-        const plainText = config.app_secret+tiktokPathHash+decodeURIComponent(input)+config.app_secret;
+        const plainText = config.app_secret+tiktokPathHash+decodeURIComponent(input)+JSON.stringify(body)+config.app_secret;
         const signature = this.sha256Decoded(plainText, config.app_secret);
         return {
             signature,

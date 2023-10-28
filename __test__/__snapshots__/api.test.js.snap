@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TikTok API throws an error when the product data is invalid 1`] = `"Invalid product data: "description" is not allowed to be empty"`;
