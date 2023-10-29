@@ -11,13 +11,15 @@
   Paypal: https://paypal.me/tudinhacoustic
 
 ## Content
-1. [Installation](#installation)
-2. [Features](#features)
-3. [Community](#community)
-4. [Generate Signature using Url](#generate-signature-using-url)
-5. [Generate Signature using Config](#generate-signature-using-config)
-6. [Generate Token using Auth Code](#generate-token-using-auth-code)
-7. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
+- [Content](#content)
+- [Installation](#installation)
+- [Features](#features)
+- [Community](#community)
+- [Generate Signature using Url](#generate-signature-using-url)
+- [Generate Signature using Config](#generate-signature-using-config)
+- [Generate Token using Auth Code](#generate-token-using-auth-code)
+- [Generate Token using Refresh Token](#generate-token-using-refresh-token)
+- [Using TikTok Shop Client API](#using-tiktok-shop-client-api)
 
 ## Installation
 
@@ -148,6 +150,26 @@ Response Data
     "user_type": 0
 }
 ```
+
+[Back](#content)
+
+## Using TikTok Shop Client API
+The TikTok Shop Client API can be easily used to interact with the TikTok API. Here is an example of how it can be used:
+
+```javascript
+const TitTokClient = require('tiktok-shop');
+
+// Create a new client
+const client = TitTokClient('yourAppKey', 'yourAppSecret', 'yourAccessToken', 'yourShopChiper', 'yourShopId');
+
+// Now you can use the client to call the API
+// For instance, here is how you can get a product:
+client.getProduct('productId').then(product => {
+  console.log(product);
+});
+```
+In this example, we are creating a new TikTok client and then we use the getProduct method to get product details.
+
 [Back](#content)
 
 
