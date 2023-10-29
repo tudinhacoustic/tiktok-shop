@@ -1,6 +1,21 @@
 const axios = require('axios');
 const Common = require('./common/common');
 const Authorized = require('./services/authorized');
+const TikTok = require('./api/api')
+
+function TitTokClient(appKey, appSecret, accessToken, shopChiper, shopId){
+    if (!appKey) {
+        return new Error('appKey is required');
+    }
+    if (!accessToken) {
+        return new Error('accessToken is required');
+    }
+    if (!appSecret) {
+        return new Error('appSecret is required');
+    }
+    const client = new TikTok({appKey, accessToken, shopChiper, shopId, appSecret})
+    return client
+}
 function signature(config, path) {
     const error = Common.checkConfig(config);
     if (error) {
@@ -69,4 +84,5 @@ module.exports = {
     authCodeToken,
     generateToken,
     signByUrl,
+    TitTokClient
 }

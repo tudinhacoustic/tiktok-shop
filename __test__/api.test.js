@@ -84,27 +84,27 @@ describe("TikTok API", () => {
       accessToken: "test",
       appSecret: "test",
     });
-    axios.mockResolvedValue(resp);
+    axios.get.mockResolvedValue(resp);
     const data = await tikTok.getProduct("test");
     expect(data).toBe("test");
   });
   it("getProduct", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.get.mockResolvedValue(resp);
     const data = await tikTok.getProduct("test");
     expect(data).toBe("test");
   });
 
   it("searchInventory", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.searchInventory({ test: "test" });
     expect(data).toBe("test");
   });
 
   it("adds a product to the TikTok API", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.addProduct(validProductData);
     expect(data).toBe("test");
   });
@@ -117,88 +117,88 @@ describe("TikTok API", () => {
 
   it("getShops", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.get.mockResolvedValue(resp);
     const data = await tikTok.getShops();
     expect(data).toBe("test");
   });
 
   it("getSellerShops", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.get.mockResolvedValue(resp);
     const data = await tikTok.getSellerShops();
     expect(data).toBe("test");
   });
 
   it("recommendCategory", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.recommendCategory(validCategoryData);
     expect(data).toBe("test");
   });
 
   it("updateProduct", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.put.mockResolvedValue(resp);
     const data = await tikTok.updateProduct("test", validProductData);
     expect(data).toBe("test");
   });
 
   it("getWarehouses", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.get.mockResolvedValue(resp);
     const data = await tikTok.getWarehouses();
     expect(data).toBe("test");
   });
 
   it("updateProductPrices", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.updateProductPrices("test", validSkuPriceData);
     expect(data).toBe("test");
   });
 
   it("partiallyEditProduct", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.partiallyEditProduct("test", validProductData);
     expect(data).toBe("test");
   });
 
   it("getCategoryAttributes", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.get.mockResolvedValue(resp);
     const data = await tikTok.getCategoryAttributes("test");
     expect(data).toBe("test");
   });
 
   it("updateProductInventory", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.updateProductInventory("test", validSkuData);
     expect(data).toBe("test");
   });
 
   it("activateProducts", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.activateProducts(validProductIds);
     expect(data).toBe("test");
   });
   it("deactivateProducts", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.deactivateProducts(validProductIds);
     expect(data).toBe("test");
   });
   it("deleteProducts", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.delete.mockResolvedValue(resp);
     const data = await tikTok.deleteProducts(validProductIds);
     expect(data).toBe("test");
   });
   it("recoverProducts", async () => {
     const resp = { data: "test" };
-    axios.mockResolvedValue(resp);
+    axios.post.mockResolvedValue(resp);
     const data = await tikTok.recoverProducts(validProductIds);
     expect(data).toBe("test");
   });
