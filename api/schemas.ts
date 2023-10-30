@@ -1,4 +1,5 @@
-const Joi = require('joi');
+
+import Joi from 'joi';
 
 const imageSchema = Joi.object({
 	src: Joi.string().uri().required(),
@@ -35,7 +36,7 @@ const packageWeightSchema = Joi.object({
 	unit: Joi.string().valid('CENTIMETER', 'KILOGRAM', 'INCH', 'POUND').required(),
 	value: Joi.number().required(),
 });
-const certificationSchema = Joi.object(); 
+const certificationSchema = Joi.object();
 
 const videoSchema = Joi.object({
 	ratio: Joi.string().valid('1:1').optional(),
@@ -105,7 +106,7 @@ const skuInventorySchema = Joi.array().items(
 
 const productIdsSchema = Joi.array().items(Joi.string().required());
 
-module.exports = {
+export {
 	productSchema,
 	recommendationSchema,
 	productPricesSchema,
