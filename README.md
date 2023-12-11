@@ -104,7 +104,7 @@ const config = {
 
 // How to get Auth Code: https://partner.tiktokshop.com/doc/page/63fd743c715d622a338c4e5a
 const authCode = 'yourAuthCode';
-const accessToken = tiktokShop.authCodeToken(config, authCode);
+const accessToken = await tiktokShop.authCodeToken(config, authCode);
 console.info(accessToken);
 ```
 Response Data
@@ -132,7 +132,7 @@ const config = {
 }
 
 const refreshToken = 'yourRefreshToken';
-const accessToken = tiktokShop.authCodeToken(config, refreshToken);
+const accessToken = await tiktokShop.generateToken(config, refreshToken);
 console.info(accessToken);
 ```
 Response Data
