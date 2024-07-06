@@ -1,6 +1,6 @@
 {
   "name": "tiktok-shop",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Generate \"signature\" and \"token\" for Tiktok Shop.",
   "main": "index.js",
   "scripts": {
