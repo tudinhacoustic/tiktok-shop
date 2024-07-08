@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const constants = require('../constants');
 module.exports = class Common {
     static timestamp() {
-        const currentUnixTimeInSeconds = Math.floor(Date.now() / 1000) - 500;
+        const currentUnixTimeInSeconds = Math.floor(Date.now() / 1000) - 100;
         return currentUnixTimeInSeconds;
     }
     static sha256Decoded(plainText, secretKey) {
