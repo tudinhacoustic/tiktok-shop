@@ -102,7 +102,7 @@ module.exports = class Common {
             input+=key[index]+modParams[key[index]];
         };
         input=path+input;
-        input=input+JSON.stringify(body);
+        input=Object.keys(body).length > 0 ? input+JSON.stringify(body) : input;
         const plainText = appSecret+input+appSecret;
         const signature = this.sha256Decoded(plainText, appSecret);
         return {
