@@ -57,15 +57,19 @@ async function generateToken(config, refreshToken) {
     if (errorResponse) { return new Error(errorResponse) };
     return result;
 }
-function signByUrl(url = '', appSecret = '') {
+function signByUrl(url = '', appSecret = '', body = {}) {
     const error = Common.checkUrl(url, appSecret);
     if (error) {
         return new Error(error);
     }
-    return Common.signByUrl(url, appSecret);
+    if (typeof body === "string") {
+        return Common.signByUrl(url, appSecret, JSON.parse(body));
+    }
+    return Common.signByUrl(url, appSecret, body);
 }
+
 module.exports = {
-    signature,
+    // signature,
     authCodeToken,
     generateToken,
     signByUrl,

@@ -1,6 +1,11 @@
 [![Tiktok-shop Logo](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWnWWI1yW_T2VRAYVgkByltWqH41X-Qfslgr2qHM3j64VVksDjz9CxzwbQ8M1vYlaB7QIN5pg0BUcxGP05kIcfXSNusvmeCkxVIQYkYyC12bHwuW__r9krtMPXN8yPhaXrcapdhDD70RE5vzjLb26D3d60STB5GFypF3OsNTnYhIrAtowx7eC54qJsrKGk/s1600/Untitled-2.png)](https://github.com/tudinhacoustic/tiktok-shop)
 
   Generate "signature" and "token" for [Tiktok Shop](https://partner.tiktokshop.com/doc).
+  
+  Ver1.1.0 Announcement: 
+  
+  * Closed "Generate Signature using Config" Function
+  * Applied "the API request body" in signByUrl. [Quick Access](#generate-signature-using-url)
 
   [![NPM Version][npm-version-image]][npm-url]
   
@@ -15,9 +20,8 @@
 2. [Features](#features)
 3. [Community](#community)
 4. [Generate Signature using Url](#generate-signature-using-url)
-5. [Generate Signature using Config](#generate-signature-using-config)
-6. [Generate Token using Auth Code](#generate-token-using-auth-code)
-7. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
+5. [Generate Token using Auth Code](#generate-token-using-auth-code)
+6. [Generate Token using Refresh Token](#generate-token-using-refresh-token)
 
 ## Installation
 
@@ -54,7 +58,10 @@ const url = 'https://open-api.tiktokglobalshop.com/order/202309/orders?access_to
 
 const appSecret = '4ebxxx';
 
-const signature = tiktokShop.signByUrl(url, appSecret);
+// You can apply both string or JSON type, for Example
+const body = {"order_id":"5766XXX","shipping_service_id":"7208XXX"};
+
+const signature = tiktokShop.signByUrl(url, appSecret, body);
 console.info(signature);
 ```
 Response Data
@@ -66,32 +73,6 @@ Response Data
 ```
 [Back](#content)
 
-## Generate Signature using Config
-```js
-const tiktokShop = require('tiktok-shop')
-
-// Extract all query param EXCEPT ' sign ', ' access_token ', You do not need to reorder the params based on alphabetical order.
-const config = {
-    app_key: 'yourAppKey', // Required
-    app_secret: 'yourAppSecret',  // Required
-    shop_id: 'yourShopId', // Optional
-    shop_cipher: 'yourShopCipher', // Optional
-    version: '202306', // Default: 202212
-}
-
-// Tiktok API name, more detail: https://partner.tiktokshop.com/dev/api-testing-tool
-const path = '/api/orders/search';
-const signature = tiktokShop.signature(config, path);
-console.info(signature);
-```
-Response Data
-```console
-{
-  signature: '96f15922fbacd220cea0d8370ba7dff2273674f2a2856868b7e32f7d98da0efe',
-  timestamp: 1697540200
-}
-```
-[Back](#content)
 ## Generate Token using Auth Code
 ```js
 const tiktokShop = require('tiktok-shop')
