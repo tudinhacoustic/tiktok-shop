@@ -2,7 +2,7 @@
 
   Generate "signature" and "token" for [Tiktok Shop](https://partner.tiktokshop.com/doc).
   
-  Ver1.1.1 Announcement: 
+  Ver1.1.2 Announcement: 
   
   * Closed "Generate Signature using Config" Function.
   * Applied "the API request body" in signByUrl. [Quick Access](#generate-signature-using-url)
